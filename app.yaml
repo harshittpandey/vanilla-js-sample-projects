@@ -1,0 +1,30 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /js-1
+  mime_type: text/html
+  static_files: www/js-1/index.html
+  upload: www/js-1/index.html
+  expiration: "1h"
+  secure: always
+
+- url: /js-1/(.*\.css)
+  mime_type: text/css
+  static_files: www/js-1/\1
+  upload: www/js-1/(.*\.css)
+  expiration: "1h"
+  secure: always
+
+- url: /(.*\.js)
+  mime_type: text/javascript
+  static_files: www/\1
+  upload: www/(.*\.js)
+  expiration: "1h"
+  secure: always
+
+- url: /(.*)
+  static_files: www/\1
+  upload: www/(.*)
+  secure: always
