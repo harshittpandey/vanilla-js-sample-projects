@@ -17,6 +17,48 @@ handlers:
   expiration: "1h"
   secure: always
 
+- url: /js-2
+  mime_type: text/html
+  static_files: www/js-2/index.html
+  upload: www/js-2/index.html
+  expiration: "1h"
+  secure: always
+
+- url: /js-2/(.*\.css)
+  mime_type: text/css
+  static_files: www/js-2/\1
+  upload: www/js-2/(.*\.css)
+  expiration: "1h"
+  secure: always
+
+- url: /js-2/(.*\.js)
+  mime_type: text/javascript
+  static_files: www/js-2/\1
+  upload: www/js-2/(.*\.js)
+  expiration: "1h"
+  secure: always
+
+- url: /js-3
+  mime_type: text/html
+  static_files: www/js-3/index.html
+  upload: www/js-3/index.html
+  expiration: "1h"
+  secure: always
+
+- url: /js-3/(.*\.css)
+  mime_type: text/css
+  static_files: www/js-3/\1
+  upload: www/js-3/(.*\.css)
+  expiration: "1h"
+  secure: always
+
+- url: /js-3/(.*\.js)
+  mime_type: text/javascript
+  static_files: www/js-3/\1
+  upload: www/js-3/(.*\.js)
+  expiration: "1h"
+  secure: always
+
 - url: /(.*\.js)
   mime_type: text/javascript
   static_files: www/\1
