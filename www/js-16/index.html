@@ -8,19 +8,21 @@
 box-sizing: border-box;
 }
 
+body {
+    margin: 0
+}
+
 *, *:before, *:after {
 box-sizing: inherit;
 }
 
 html {
-font-size: 10px;
+font-size: 14px;
 background: #ffc600;
 }
 
 .photobooth {
 background: white;
-max-width: 150rem;
-margin: 2rem auto;
 border-radius: 2px;
 }
 
@@ -32,7 +34,8 @@ clear: both;
 }
 
 .photo {
-float: left;
+width: 78%;
+float: right;
 }
 
 .player {
@@ -69,28 +72,38 @@ background: white;
 
   <div class="photobooth">
     <div class="controls">
-      <button onClick="takePhoto()">Take Photo</button>
-      <div class="rgb">
-        <label for="rmin">Red Min:</label>
-        <input type="range" min=0 max=255 name="rmin">
-        <label for="rmax">Red Max:</label>
-        <input type="range" min=0 max=255 name="rmax">
-        <br>
-        <label for="gmin">Green Min:</label>
-        <input type="range" min=0 max=255 name="gmin">
-        <label for="gmax">Green Max:</label>
-        <input type="range" min=0 max=255 name="gmax">
-        <br>
-        <label for="bmin">Blue Min:</label>
-        <input type="range" min=0 max=255 name="bmin">
-        <label for="bmax">Blue Max:</label>
-        <input type="range" min=0 max=255 name="bmax">
+      <button onClick="takePhoto()" style="border: 0px; padding: 10px; background: darkorange; color: white; position: absolute;top: 2rem; margin: 12px; width: 20%; cursor: pointer">Take Photo</button>
+      <div class="rgb" style="width: fit-content; padding: 12px; background: #f5a42ad1; border-radius: 5px; position: absolute; top: 10rem; margin: 12px" >
+          <div class="">
+              <label for="rmin" style="float:left">Red Min:</label>
+              <label for="rmax" style="float: right">Red Max:</label>
+              <br>
+              <input type="range" min=0 max=255 name="rmin">
+              <input type="range" style="float: right" min=0 max=255 name="rmax">
+          </div>
+          <div class="">
+              <label for="gmin">Green Min:</label>
+              <label for="gmax" style="float: right">Green Max:</label>
+              <br>
+              <input type="range" min=0 max=255 name="gmin">
+              <input type="range" min=0 max=255 name="gmax">
+          </div>
+          <div class="">
+              <label for="bmin">Blue Min:</label>
+              <label for="bmax" style="float: right">Blue Max:</label>
+              <br>
+              <input type="range" min=0 max=255 name="bmin">
+              <input type="range" min=0 max=255 name="bmax">
+          </div>
       </div>
     </div>
 
-    <canvas class="photo"></canvas>
+    <div class="" style="">
+        <canvas class="photo" style="height: 100vh"></canvas>
+    </div>
     <video class="player"></video>
-    <div class="strip"></div>
+    <br>
+    <div class="strip" style="position: absolute; bottom: 5rem"></div>
   </div>
 
   <audio class="snap" src="http://wesbos.com/demos/photobooth/snap.mp3" hidden></audio>
