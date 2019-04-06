@@ -28,9 +28,9 @@ function paintToCanvas() {
         // console.log(pixels);
         // pixels= redEffect(pixels);
 
-        // pixels= rgbSplit(pixels);
+        pixels= rgbSplit(pixels);
 
-        // ctx.globalAlpha = 0.1;
+        ctx.globalAlpha = 0.1;
 
         pixels= greenScreen(pixels);
         ctx.putImageData(pixels, 0, 0);
@@ -65,8 +65,8 @@ function redEffect(pixels) {
 function rgbSplit(pixels) {
     for(let i=0; i<pixels.data.length; i+=4) {
         pixels.data[i- 150]= pixels.data[i+ 0] ;
-        pixels.data[i+ 500]= pixels.data[i+ 1] ;
-        pixels.data[i- 550]= pixels.data[i+ 2] ;
+        pixels.data[i+ 100]= pixels.data[i+ 1] ;
+        pixels.data[i- 150]= pixels.data[i+ 2] ;
     }
     return pixels;
 }
